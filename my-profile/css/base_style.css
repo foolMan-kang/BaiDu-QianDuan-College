@@ -1,0 +1,26 @@
+html{
+    font-size: 16px;
+}
+h1{
+    font-size: 36px;
+    text-align: center;
+}
+h2{
+    font-size: 24px;
+}
+span.label{
+    font-weight: bold;
+    margin-right: 8px;
+}
+address{
+    font-style: normal;
+}
+span.content,a{
+    margin-right: 40px;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px red;
+
+}
+dt{
+    font-weight: bold;
+}
