@@ -1,0 +1,19 @@
+.left{
+    float: left;
+    width: 140px;
+    height: 200px;
+    border: 1px solid blanchedalmond;
+    text-align: center;
+    line-height: 200px;
+}
+.middle{
+    display: none;
+}
+.right{
+    margin-left: 0;
+    overflow: auto;
+    height: 200px;
+    border: 1px solid blanchedalmond;
+    text-align: center;
+    line-height: 200px;
+}

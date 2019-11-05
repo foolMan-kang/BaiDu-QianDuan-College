@@ -1,0 +1,24 @@
+.left{
+    float: left;
+    width:200px;
+    height: 200px;
+    border: 1px solid blanchedalmond;
+    text-align: center;
+    line-height: 200px;
+}
+.middle{
+    float: left;
+    width: calc(100% - 406px);
+    border: 1px solid blanchedalmond;
+    text-align: center;
+    line-height: 200px;
+    height: 200px;
+}
+.right{
+    float: right;
+    height: 200px;
+    width: 200px;
+    border: 1px solid blanchedalmond;
+    text-align: center;
+    line-height: 200px;
+}

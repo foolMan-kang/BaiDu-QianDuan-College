@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7d7f18d-28ff-4f66-8cd4-0332caec3550" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/style_1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/style_2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/style_3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/note/readme-5-6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Three-layout/index1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Three-layout/style_1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme-2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/readme-2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme-3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/readme-3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme-4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/readme-4.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            <state relative-caret-position="807">
+              <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -75,6 +69,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -82,21 +77,10 @@
               <item name="my-profile" type="b2602c69:ProjectViewProjectNode" />
               <item name="my-profile" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="my-profile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-profile" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-profile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-profile" type="462c0819:PsiDirectoryNode" />
-              <item name="note" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -107,7 +91,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="file.status.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -150,7 +134,11 @@
       <workItem from="1572154246438" duration="2756000" />
       <workItem from="1572440888550" duration="2942000" />
       <workItem from="1572448700966" duration="2306000" />
-      <workItem from="1572483363208" duration="1440000" />
+      <workItem from="1572483363208" duration="3252000" />
+      <workItem from="1572503109805" duration="601000" />
+      <workItem from="1572504746989" duration="3000" />
+      <workItem from="1572504772634" duration="1000" />
+      <workItem from="1572508034618" duration="192000" />
     </task>
     <task id="LOCAL-00001" summary="3-finish">
       <created>1572057489179</created>
@@ -166,17 +154,23 @@
       <option name="project" value="LOCAL" />
       <updated>1572070283429</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="5,6-finish">
+      <created>1572484931327</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572484931327</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35048000" />
+    <option name="totallyTimeSpent" value="37657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12447917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.061979167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -189,8 +183,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32944915" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32910052" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005208" side_tool="true" weight="0.32944915" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32944915" />
+      <window_info anchor="bottom" id="GitHub Pull Requests" order="12" sideWeight="0.49947917" weight="0.32944915" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -202,7 +197,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="3-finish" />
     <MESSAGE value="4-finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="4-finish" />
+    <MESSAGE value="5,6-finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="5,6-finish" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/note/readme-2.txt">
@@ -263,8 +259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        <state relative-caret-position="807">
+          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
         </state>
       </provider>
     </entry>
