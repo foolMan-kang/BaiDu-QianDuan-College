@@ -6,11 +6,10 @@ header{
     width:100%;
     height: 70px;
     background: #3c3c3c;
-    margin: 0;
-    padding: 0;
+    align-items: center;
 }
 #logo{
-    margin: 0 auto;
+    margin:0 auto;
     width:960px;
     text-align: right;
 }
@@ -54,6 +53,8 @@ a{
     margin:0 auto;
 }
 .ye{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     font-size: 14px;
     border:1px solid #bbbbbb;
     padding:5px 8px 1px 8px;
@@ -78,7 +79,7 @@ main p:nth-child(-n+3){
     width: calc((960px - 12px - 480px) / 3)
 }
 main p:nth-child(3) ~ p:nth-child(6){
-    width: calc((960px - 16px - 640px) / 4)
+    width: calc((960px - 13px - 640px) / 4)
 }
 main p:nth-child(n+8){
     width: calc((960px - 12px - 480px) / 3)
