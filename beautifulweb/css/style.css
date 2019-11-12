@@ -1,0 +1,105 @@
+html,body{
+    padding:0;
+    border:0;
+    margin:0;
+    background: #c1bebf;
+    font-size: 16px;
+}
+.root{
+    width: 1600px;
+    height:6000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sign{
+    color:white;
+    flex: 1.5;
+    background-image: url("../images/前端学院设计图_02.png");
+    background-repeat: no-repeat;
+}
+.sign h1{
+    font-size: 3em;
+    font-weight: lighter;
+    text-align: center;
+    width:50%;
+    margin:175px auto 0;
+}
+.sign #intro{
+    color: #b3b3b3;
+    font-size: 1.2em;
+    font-weight: lighter;
+    text-align: center;
+    width:40%;
+    margin:70px auto 70px;
+}
+.account{
+    width: 57%;
+    height:270px;
+    margin:0 auto;
+    border: 1px solid #9c9c9c;
+}
+.account #tip1{
+    color: #e3e3e3;
+    font-size: 1.2em;
+    text-align: center;
+    width:40%;
+    margin:40px auto 0;
+}
+.account #tip2{
+    color: #707070;
+    font-size: 0.6em;
+    text-align: center;
+    width:40%;
+    margin:13px auto 0;
+}
+.account #email{
+    color:#ffffff;
+    border:1px solid #707070;
+    background: transparent;
+    padding:17px 80px 17px 15px;
+    margin-top: 70px;
+    margin-left: 110px;
+}
+.account #pwd{
+    color: #898989;
+    border:1px solid #707070;
+    background: transparent;
+    padding:17px 80px 17px 15px;
+    margin-top: 70px;
+    margin-left: 30px;
+}
+.account button{
+    border:0;
+    background: #ffffff;
+    padding:17px 35px 17px 35px;
+    margin-top: 70px;
+    margin-left: 30px;
+}
+
+
+.feature{
+    flex: 1;
+    border: 1px solid blue;
+}
+
+
+.material{
+    flex: 1.2;
+    border: 1px solid blue;
+}
+
+
+.intro{
+    flex: 6;
+    border: 1px solid blue;
+}
+
+
+.footer{
+    flex: 0.8;
+    border: 1px solid blue;
+}
+
