@@ -27,7 +27,7 @@ html,body{
     width:50%;
     margin:175px auto 0;
 }
-.sign #intro{
+.sign #intro1{
     color: #b3b3b3;
     font-size: 1.2em;
     font-weight: lighter;
@@ -71,35 +71,403 @@ html,body{
     margin-top: 70px;
     margin-left: 30px;
 }
-.account button{
+.account #test{
+    display: inline-block;
     border:0;
     background: #ffffff;
-    padding:17px 35px 17px 35px;
-    margin-top: 70px;
+    font-size: 1em;
+    padding:17px 15px 17px 15px;
+    margin-top: 80px;
     margin-left: 30px;
+    color: #313131;
 }
 
 
 .feature{
-    flex: 1;
-    border: 1px solid blue;
+    background: #ffffff;
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 100px 200px 180px 1fr;
+}
+.feature #intro2{
+    font-size: 0.8em;
+    margin-top: 70px;
+    text-align: center;
+    grid-area:1/1/2/13;
+    color: black;
+    font-weight: bold;
+}
+.feature h2{
+    margin-left: 40px;
+    margin-top:10px;
+    font-size: 2.5em;
+    font-weight: lighter;
+    grid-area: 2/4/3/9;
+    text-align: center;
+}
+.feature .img1{
+    grid-area:3/3/4/5;
+}
+.feature .img2{
+    grid-area:3/8/4/9;
+}
+.feature .img3{
+    grid-area:4/3/5/5;
+}
+.feature .img4{
+    grid-area:4/8/5/9;
+}
+.feature .title1{
+    margin-top:-5px;
+    margin-left: 70px;
+    grid-area:3/3/4/6;
+}
+.feature .title2{
+    margin-top:-5px;
+    margin-left: 70px;
+    grid-area:3/8/4/11;
+}
+.feature .title3{
+    margin-top:-5px;
+    margin-left: 70px;
+    grid-area:4/3/5/6;
+}
+.feature .title4{
+    margin-top:-5px;
+    margin-left: 70px;
+    grid-area:4/8/5/11;
+}
+.feature .detail1{
+    font-weight: lighter;
+    margin-top:30px;
+    margin-left: 70px;
+    grid-area:3/3/4/6;
+}
+.feature .detail2{
+    font-weight: lighter;
+    margin-top:30px;
+    margin-left: 70px;
+    grid-area:3/8/4/11;
+}
+.feature .detail3{
+    font-weight: lighter;
+    margin-top:30px;
+    margin-left: 70px;
+    grid-area:4/3/5/6;
+}
+.feature .detail4{
+    font-weight: lighter;
+    margin-top:30px;
+    margin-left: 70px;
+    grid-area:4/8/5/11;
 }
 
 
 .material{
     flex: 1.2;
-    border: 1px solid blue;
+    color: #e3e3e3;
+    background-image: url("../images/前端学院设计图_03.png");
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+.material .left{
+    padding: 170px 20px 0 50px;
+}
+.left h2{
+    font-weight: lighter;
+    font-size: 2em;
+    width: 50%;
+    margin:10px auto 0;
+    margin-left: 280px;
+}
+.material .intro1{
+    color: #9b9b9b;
+    margin: 40px auto 0;
+    margin-left: 280px;
+    width: 50%;
+    font-weight: lighter;
+}
+.material .button1{
+    padding:0;
+    color: black;
+    display: inline-block;
+    font-size: 0.3em;
+    margin-top: 50px;
+    margin-left: 280px;
+    width: 200px;
+    height:50px;
+    background: #ffffff;
+}
+.material .button2{
+    padding:0;
+    display: inline-block;
+    font-size: 0.3em;
+    border: 1px solid #6b6b6b;
+    background: transparent;
+    color:#e3e3e3;
+    width:200px;
+    height:50px;
+    margin-left: 30px;
+}
+
+.material .right{
+    display: flex;
+    color:black;
+    margin:70px 0 70px 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border:1px solid #e3e3e3;
+    border-right: transparent;
+}
+.right .right-content{
+    height: 88.5%;
+    border:1px solid #e3e3e3;
+    border-right: transparent;
+    margin: 30px 0 30px 50px;
+    background: #ffffff;
+}
+.right h2{
+    margin:70px 0 0 420px;
+}
+.right p:nth-child(2){
+    font-size: 0.8em;
+    font-weight: lighter;
+    color: #666666;
+    margin:15px 0 30px 320px;
+    text-align: center;
+}
+.right .img-group{
+    margin:30px 0 0 100px;
+    display: flex;
+    flex-direction: row;
+}
+.right .img_div{
+    margin-left: 10px;
+    border:1px solid #e3e3e3;
+
+}
+.img_div .img_title{
+    margin:10px 0 0 10px;
+}
+.img_div .img_detail{
+    color:#e3e3e3;
+    font-size: 0.5em;
+    margin:10px 0 20px 10px;
 }
 
 
 .intro{
-    flex: 6;
-    border: 1px solid blue;
+    margin-bottom: 0;
+}
+.product_intro{
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 3fr;
+    border-bottom: 1px solid #a9a9a9;
+    padding-bottom: 10px;
+}
+.product_intro h2{
+    font-size: 1.8em;
+    font-weight: lighter;
+    margin-top: 70px;
+    grid-area: 1/1/2/4;
+    text-align: center;
+}
+.product_intro h4{
+    font-size: 1.2em;
+    margin:50px 0 0 0;
+    text-align: center;
+}
+.product_intro p{
+    margin-top:0;
+    text-align: center;
+    margin-left: 140px;
+    width: 50%;
+    color: #5f5f5f;
 }
 
+.pic_intro{
+    background: #ffffff;
+    border-bottom: 1px solid #a9a9a9;
+    display: grid;
+    grid-template-areas: "image1 title1"
+                         "image1 detail1"
+                         "title2 image2"
+                         "detail2 image2";
+    padding:50px;
+}
+.pic_intro img:nth-child(1){
+    grid-area: image1;
+    margin-top:50px;
+    margin-left: 180px;
+}
+.pic_intro h4:nth-child(2){
+    font-size: 1.3em;
+    grid-area: title1;
+    margin: 100px 0 0 90px;
+    width:50%;
+}
+.pic_intro p:nth-child(3){
+    line-height: 2em;
+    font-weight: lighter;
+    color:#9b9b9b;
+    grid-area: detail1;
+    margin: -20px 0 0 90px;
+    width: 52%;
+}
+.pic_intro img:nth-child(4){
+    grid-area: image2;
+    margin: 60px 180px 50px 0;
+}
+.pic_intro h4:nth-child(5){
+    font-size: 1.3em;
+    grid-area: title2;
+    margin: 130px 0 0 310px;
+    width:50%;
+}
+.pic_intro p:nth-child(6){
+    grid-area: detail2;
+    margin: -80px 0 0 310px;
+    width: 52%;
+    line-height: 2em;
+    font-weight: lighter;
+    color:#9b9b9b;
+}
+
+.human_intro{
+    background: #ffffff;
+    border-bottom: 1px solid #a9a9a9;
+    display: grid;
+    grid-template-areas: "header header"
+                         "detail detail"
+                         "pic1 pic2"
+                         "pic3 pic4";
+    padding:50px 50px 80px 50px;
+    grid-gap: 30px;
+}
+.human_intro h2{
+    font-weight: lighter;
+    font-size: 2.3em;
+    margin:50px auto;
+    grid-area: header;
+}
+.human_intro p{
+    line-height: 2em;
+    text-align: center;
+    width:50%;
+    margin:-60px auto;
+    color:#9c9c9c;
+    grid-area: detail;
+}
+.human_intro .img_left{
+    justify-self: right;
+}
+.human_intro .img_right{
+    justify-self: left;
+}
+
+.tel_intro{
+    background: #ffffff;
+    border-bottom: 1px solid #a9a9a9;
+    display: flex;
+    padding:50px 50px 80px 50px;
+}
+.tel_intro .left{
+    margin-left: 250px;
+    height:550px;
+    flex: 0.7;
+    border: 1px solid #a9a9a9;
+    border-radius: 17px;
+}
+.tel_intro .left h4{
+    font-size: 1.2em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.tel_intro input,textarea,button{
+    font-size: 1.2em;
+    color: #9c9c9c;
+    border: 1px solid #a9a9a9;
+    padding: 15px 150px 15px 20px;
+    display: block;
+    width: 150px;
+    margin-left: 100px;
+    margin-top:30px;
+}
+.tel_intro textarea{
+    height:110px;
+}
+.tel_intro button{
+    color:#ffffff;
+    background: #000000;
+    padding-left: 130px ;
+    width:323px;
+}
+.tel_intro .right{
+    flex: 1;
+}
+.tel_intro .right h2{
+    font-weight: lighter;
+    font-size: 2.5em;
+    margin:70px 0 0 100px;
+    text-align: left;
+}
+.tel_intro .right .intro{
+    width: 40%;
+    font-size: 0.9em;
+    font-weight: lighter;
+    margin:20px 0 70px 100px;
+    text-align: left;
+}
+.tel_intro .right .detail{
+    display: inline-block;
+    color: #2d2d2d;
+    font-size: 1em;
+    font-weight: bold;
+    margin:25px 0 0 10px;
+    text-align: left;
+    vertical-align: top;
+}
+.tel_intro .right img{
+    display: inline-block;
+    color: #2d2d2d;
+    font-size: 1em;
+    font-weight: bold;
+    margin:30px 0 0 100px;
+    text-align: left;
+}
 
 .footer{
+    color:#ffffff;
+    background: #000000;
     flex: 0.8;
-    border: 1px solid blue;
+}
+.footer ul{
+    list-style-type: none;
+    vertical-align: top;
+    margin: 70px 0 0 150px;
+    display: inline-block;
+    color: #646464;
+    line-height: 4em;
+}
+.footer ul .title{
+    font-size: 1.2em;
+    color: #ffffff;
+}
+.footer .test   {
+    line-height: 2em;
+}
+.footer ul .social{
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.footer .social li{
+    padding: 0;
+    margin-right: 20px;
 }
 
