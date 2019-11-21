@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+    <button id="fade-btn">淡出</button>
+<script>
+    var timer1;
+    var pam;
+    var test=1;
+    function fade(){
+        let change=pam?0.1:-0.1;
+        var t=document.getElementById('fade-obj');
+        t.style.opacity=Number(t.style.opacity)+change;
+        if(t.style.opacity<=0){
+            clearInterval(timer1);
+            let r=document.getElementById('fade-btn');
+            r.disabled=false;
+            r.innerHTML='淡入';
+        }
+        if(t.style.opacity>=1){
+            clearInterval(timer1);
+            let r=document.getElementById('fade-btn');
+            r.disabled=false;
+            r.innerHTML='淡出';
+        }
+    }
+    document.getElementById('fade-btn').onclick=function (e) {
+        var t=document.getElementById('fade-obj');
+        if(e.target.innerHTML=='淡出'){
+            t.style.opacity=1;
+            pam=0;
+        }else{
+            t.style.opacity=0;
+            pam=1;
+        }
+        e.target.disabled=true;
+        timer1=setInterval('fade()',500);
+    }
+</script>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>IFE ECMAScript</title>-->
+<!--    <style>-->
+<!--        .palette {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            list-style: none;-->
+<!--        }-->
+<!--        .palette li {-->
+<!--            width: 40px;-->
+<!--            height: 40px;-->
+<!--            border: 1px solid #000;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<ul class="palette">-->
+<!--    <li style="background-color:crimson"></li>-->
+<!--    <li style="background-color:bisque"></li>-->
+<!--    <li style="background-color:blueviolet"></li>-->
+<!--    <li style="background-color:coral"></li>-->
+<!--    <li style="background-color:chartreuse"></li>-->
+<!--    <li style="background-color:darkolivegreen"></li>-->
+<!--    <li style="background-color:cyan"></li>-->
+<!--    <li style="background-color:#ff0000"></li>-->
+<!--</ul>-->
+
+<!--<p class="color-picker"></p>-->
+
+<!--<script>-->
+<!--    var list = document.querySelectorAll("li");-->
+<!--    for (var i = 0, len = list.length; i < len; i++) {-->
+<!--        list[i].onclick = function(e) {-->
+<!--            console.log(e.target);-->
+<!--            var t = e.target;-->
+<!--            var c = t.style.backgroundColor;-->
+<!--            var p = document.getElementsByClassName("color-picker")[0]-->
+<!--            p.innerHTML = c;-->
+<!--            p.style.color = c;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>IFE ECMAScript</title>-->
+<!--    <style>-->
+<!--        select {-->
+<!--            display: none;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<label>-->
+<!--    <input id="school" name="status" type="radio">-->
+<!--    School-->
+<!--</label>-->
+<!--<label>-->
+<!--    <input id="company" name="status" type="radio">-->
+<!--    Company-->
+<!--</label>-->
+
+<!--<select id="school-select">-->
+<!--    <option>北京邮电大学</option>-->
+<!--    <option>黑龙江大学</option>-->
+<!--    <option>华中科技大学</option>-->
+<!--</select>-->
+
+<!--<select id="company-select">-->
+<!--    <option>百度</option>-->
+<!--    <option>爱奇艺</option>-->
+<!--</select>-->
+<!--<script>-->
+<!--    document.getElementById('school').onclick=function () {-->
+<!--        console.log(1);-->
+<!--        document.getElementById('school-select').style.display="inline";-->
+<!--        document.getElementById('company-select').style.display="none";-->
+<!--    };-->
+<!--    document.getElementById('company').onclick=function () {-->
+<!--        console.log(2);-->
+<!--        document.getElementById('company-select').style.display="inline";-->
+<!--        document.getElementById('school-select').style.display="none";-->
+<!--    };-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <input id="name" type="text">-->
+<!--    <button id="submit-btn">Submit</button>-->
+<!--    <script>-->
+<!--        document.getElementById('submit-btn').onclick=function () {-->
+<!--            console.log(document.getElementById('name').value);-->
+<!--        }-->
+<!--        document.onkeydown=function (event) {-->
+<!--            if(event.keyCode==27){-->
+<!--                document.getElementById('name').value='';-->
+<!--            }else if(event.keyCode==13){-->
+<!--                document.getElementById('submit-btn').click();-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
