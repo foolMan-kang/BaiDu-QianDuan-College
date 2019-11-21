@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style_3.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_3.css" id="cssLink"/>
     <title>个人求职简历</title>
 </head>
 <body>
@@ -61,6 +61,25 @@
             </ul>
         </section>
     </main>
-
+    <footer>
+        <button id="surprise">Surprise</button>
+    </footer>
+    <script>
+        document.getElementById('surprise').onclick=function () {
+            let random=Math.ceil(3*Math.random());
+            console.log(random);
+            document.getElementById('cssLink').href='css/style_'+random+'.css';
+        }
+        var hour=new Date().getHours();
+        var greeting;
+        if(hour<12){
+            greeting='早上好';
+        }else if(hour<19){
+            greeting='下午好';
+        }else{
+            greeting='晚上好';
+        }
+        console.log(greeting);
+    </script>
 </body>
 </html>
