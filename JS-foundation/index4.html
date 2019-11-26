@@ -1,48 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>IFE ECMAScript</title>
-</head>
-<body>
-    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
-    <button id="fade-btn">淡出</button>
-<script>
-    var timer1;
-    var pam;
-    var test=1;
-    function fade(){
-        let change=pam?0.1:-0.1;
-        var t=document.getElementById('fade-obj');
-        t.style.opacity=Number(t.style.opacity)+change;
-        if(t.style.opacity<=0){
-            clearInterval(timer1);
-            let r=document.getElementById('fade-btn');
-            r.disabled=false;
-            r.innerHTML='淡入';
-        }
-        if(t.style.opacity>=1){
-            clearInterval(timer1);
-            let r=document.getElementById('fade-btn');
-            r.disabled=false;
-            r.innerHTML='淡出';
-        }
-    }
-    document.getElementById('fade-btn').onclick=function (e) {
-        var t=document.getElementById('fade-obj');
-        if(e.target.innerHTML=='淡出'){
-            t.style.opacity=1;
-            pam=0;
-        }else{
-            t.style.opacity=0;
-            pam=1;
-        }
-        e.target.disabled=true;
-        timer1=setInterval('fade()',500);
-    }
-</script>
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>IFE ECMAScript</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>-->
+<!--    <button id="fade-btn">淡出</button>-->
+<!--<script>-->
+<!--    var timer1;-->
+<!--    var pam;-->
+<!--    var test=1;-->
+<!--    function fade(){-->
+<!--        let change=pam?0.1:-0.1;-->
+<!--        var t=document.getElementById('fade-obj');-->
+<!--        t.style.opacity=Number(t.style.opacity)+change;-->
+<!--        if(t.style.opacity<=0){-->
+<!--            clearInterval(timer1);-->
+<!--            let r=document.getElementById('fade-btn');-->
+<!--            r.disabled=false;-->
+<!--            r.innerHTML='淡入';-->
+<!--        }-->
+<!--        if(t.style.opacity>=1){-->
+<!--            clearInterval(timer1);-->
+<!--            let r=document.getElementById('fade-btn');-->
+<!--            r.disabled=false;-->
+<!--            r.innerHTML='淡出';-->
+<!--        }-->
+<!--    }-->
+<!--    document.getElementById('fade-btn').onclick=function (e) {-->
+<!--        var t=document.getElementById('fade-obj');-->
+<!--        if(e.target.innerHTML=='淡出'){-->
+<!--            t.style.opacity=1;-->
+<!--            pam=0;-->
+<!--        }else{-->
+<!--            t.style.opacity=0;-->
+<!--            pam=1;-->
+<!--        }-->
+<!--        e.target.disabled=true;-->
+<!--        timer1=setInterval('fade()',500);-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
 
 
 
@@ -80,15 +80,16 @@
 <!--<p class="color-picker"></p>-->
 
 <!--<script>-->
-<!--    var list = document.querySelectorAll("li");-->
-<!--    for (var i = 0, len = list.length; i < len; i++) {-->
-<!--        list[i].onclick = function(e) {-->
-<!--            console.log(e.target);-->
-<!--            var t = e.target;-->
-<!--            var c = t.style.backgroundColor;-->
-<!--            var p = document.getElementsByClassName("color-picker")[0]-->
-<!--            p.innerHTML = c;-->
-<!--            p.style.color = c;-->
+
+<!--    const list = document.querySelector("ul");-->
+<!--    const result=document.querySelector('.color-picker');-->
+<!--    list.addEventListener('click',changeColor);-->
+
+<!--    function changeColor(e) {-->
+<!--        if(e.target.nodeName==='LI'){-->
+<!--            let color=e.target.style.backgroundColor;-->
+<!--            result.textContent=color;-->
+<!--            result.style.color=color;-->
 <!--        }-->
 <!--    }-->
 <!--</script>-->
@@ -145,26 +146,27 @@
 
 
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <input id="name" type="text">-->
-<!--    <button id="submit-btn">Submit</button>-->
-<!--    <script>-->
-<!--        document.getElementById('submit-btn').onclick=function () {-->
-<!--            console.log(document.getElementById('name').value);-->
-<!--        }-->
-<!--        document.onkeydown=function (event) {-->
-<!--            if(event.keyCode==27){-->
-<!--                document.getElementById('name').value='';-->
-<!--            }else if(event.keyCode==13){-->
-<!--                document.getElementById('submit-btn').click();-->
-<!--            }-->
-<!--        }-->
-<!--    </script>-->
-<!--</body>-->
-<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="smile" class="animation"></div>
+    <script>
+        const ani=document.querySelector('#smile');
+        let clock=setInterval(animation,100);
+        let y=-480,count=1;
+        ani.style.cssText='background-image: url("pic.jpg"); background-repeat: no-repeat;background-position: 0 0; width: 480px; height: 480px; margin:0 auto;';
+        function animation() {
+            pos='0 '+y+'px';
+            ani.style.backgroundPosition=pos;
+            console.log(pos);
+            y-=480;
+            count++;
+            if(count%17===0) y=0;
+        }
+    </script>
+</body>
+</html>

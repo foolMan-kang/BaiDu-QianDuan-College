@@ -1,0 +1,22 @@
+1.注意不要在循环条件中直接使用length属性，一方面是每次都要调用一次，另一方面是如果对length进行修改了的话，每次循环的条件都会
+变化。所以一般用变量存储。
+
+2.css属性多为string，这使得xx+=负数可能会出现值为'1-0.1'这样的变成字符串情况，一定要注意。
+
+3.需要学习正则！
+
+4.JS调用策略
+①js
+document.addEventListener("DOMContentLoaded", function() {
+    . . .
+  });  //html文档被解析完成会触发这个事件。 也可以用async,defer异步加载(async能优化性能)。前者可用于内部js script ，后者用于外部。
+一般将JS放在</body>之前就行。
+
+5.使用addEventListener和removeEventListener代替DOM1事件操作。这个操作对于原始的.onXXX来说，还能为同一事件添加多个函数，做对应
+操作时多个函数都会运行，而DOM1只会覆盖。总之事件用这个即可，不要用老方法了。
+
+6.注意事件冒泡和捕获机制。 默认冒泡在函数内调用stopPropagation()阻止冒泡。
+事件委托即将监听器设置到父节点上，而不是每个子节点都弄一个监听器。
+
+7.使用cssText动态改变css，这样改变为内联style，用的少(一般用于动态改变少量css)。一般用setAttribute设置class来添加css。或者直接改变
+css link(整页变换)。

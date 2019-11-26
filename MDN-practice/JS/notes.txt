@@ -1,0 +1,6 @@
+1.比较符等号都用严格的双等号。
+2.js中做了判定'>' '<'不代表全部情况，还要考虑两个数据类型不一致的情况。
+3.一般用textContent代替innerHTML。DOM查询用querySelector和querySelectorAll好些，前者返回第一个，后者返回全部。
+4.F12 控制台是一个很好的调试工具，可以直接修改DOM属性，测试值之类的。
+5.能用let就不要用var。请用**代替Math.pow();
+6.unshift() 和 shift() 从功能上与 push() 和 pop() 完全相同，只是它们分别作用于数组的开始，而不是结尾。
