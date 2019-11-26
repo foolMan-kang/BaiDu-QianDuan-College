@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div>
+    <button id="1">获取当前选中输入的内容长度</button>
+    <button id="2">当前选中输入中的第3个字符</button>
+    <button id="3">把两个输入框的文字连接在一起输出（concat）</button>
+    <button id="4">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button id="5">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button id="6">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button id="7">当前选中输入框的行数</button>
+    <button id="8">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button id="9">把所选输入框中的内容全部转为大写</button>
+    <button id="10">把所选输入框中的内容全部转为小写</button>
+    <button id="11">把所选输入框中内容的半角空格全部去除</button>
+    <button id="12">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+<script>
+    var result=document.getElementById('result');
+    function getStatus(){
+        let radio=document.getElementsByName('str-obj');
+        let value=null;
+        for(let i=0;i<radio.length;i++){
+            if(radio[i].checked==true){
+                value=radio[i].value;
+                break;
+            }
+        }
+        if(value==='a'){
+            return document.getElementById('str-a').value;
+        }else{
+            return document.getElementById('str-b').value;
+        }
+    }
+
+    document.getElementById('1').onclick=function () {
+        let val=getStatus();
+        result.innerHTML=val.length;
+    };
+    document.getElementById('2').onclick=function () {
+        let val=getStatus();
+        if(val.length<3){
+            result.innerHTML='长度小于3';
+        }else{
+            result.innerHTML=val[2];
+        }
+    };
+    document.getElementById('3').onclick=function () {
+        let a=document.getElementById('str-a').value;
+        let b=document.getElementById('str-b').value;
+        result.innerHTML=a.concat(b);
+    };
+    document.getElementById('4').onclick=function () {
+        let a=document.getElementById('str-a').value;
+        let b=document.getElementById('str-b').value;
+        let val=a.indexOf(b);
+        if(val===-1){
+            result.innerHTML='b不在a中';
+        }else{
+            result.innerHTML='b在a的第'+(val+1)+'个位置';
+        }
+    };
+    document.getElementById('5').onclick=function () {
+        let a=document.getElementById('str-a').value;
+        let b=document.getElementById('str-b').value;
+        let val=b.lastIndexOf(a);
+        if(val===-1){
+            result.innerHTML='a不在b中';
+        }else{
+            result.innerHTML='a在b的第'+(val+1)+'个位置';
+        }
+    };
+    document.getElementById('6').onclick=function () {
+        let val=getStatus();
+        let start=document.getElementById('num-a').value;
+        let end=document.getElementById('num-b').value;
+        result.innerHTML=val.slice(start,end);
+    };
+    document.getElementById('7').onclick=function () {
+        let val=getStatus();
+        result.innerHTML=val.trim().split(/\r?\n\s*/).length;  //  ?
+    };
+    document.getElementById('8').onclick=function () {
+        let val=getStatus();
+        let start=document.getElementById('num-a').value;
+        let end=document.getElementById('num-b').value;
+        result.innerHTML=val.substr(start,end);
+    };
+    document.getElementById('9').onclick=function () {
+        let val=getStatus();
+        result.innerHTML=val.toUpperCase();
+    };
+    document.getElementById('10').onclick=function () {
+        let val=getStatus();
+        result.innerHTML=val.toLowerCase();
+    };
+    document.getElementById('11').onclick=function () {
+        let val=getStatus();
+        result.innerHTML=val.replace(/[ ]/g,"");
+    };
+    document.getElementById('12').onclick=function () {
+        //
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="queue-input" type="text">
+<p id="queue-cont">队列内容：apple&lt;-pear</p>
+<button id="in-btn">入队</button>
+<button id="out-btn">出队</button>
+<button id="font-btn">打印队头元素内容</button>
+<button id="empty-btn">判断队列是否为空</button>
+
+<script>
+    const input=document.querySelector('#queue-input');
+    const result=document.querySelector('#queue-cont');
+    var queue = ["apple", "pear"];
+    document.querySelector('#in-btn').addEventListener('click',function () {
+        queue.push(input.value);
+        showQueue();
+    });
+    document.querySelector('#out-btn').addEventListener('click',function () {
+        queue.shift();
+        showQueue();
+    });
+    document.querySelector('#font-btn').addEventListener('click',function () {
+        console.log(queue[queue.length-1]);
+    });
+    document.querySelector('#empty-btn').addEventListener('click',function () {
+        if(queue.length===0){
+            console.log('队列为空');
+        }else{
+            console.log('队列非空');
+        }
+    });
+
+    function showQueue() {
+        result.textContent='队列内容：'+queue.join('<-');
+        input.value='';
+        input.focus();
+    }
+    //栈和队列差不多，就不重复写了。
+</script>
+</body>
+</html>

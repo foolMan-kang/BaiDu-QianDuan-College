@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var menuArr = [
+            [1, "Area1", -1],
+            [2, "Area2", -1],
+            [3, "Area1-1", 1],
+            [4, "Area1-2", 1],
+            [5, "Area2-1", 2],
+            [6, "Area2-2", 2],
+            [7, "Area1-2-3", 4],
+            [8, "Area2-2-1", 6],
+        ];
+        let obj={};
+        function f(root) {
+            for(let i=0;i<menuArr.length;i++){
+                let arr=menuArr[i];
+                let temp={name:arr[1]};
+                search(menuArr,temp,root);
+            }
+        }
+        function search(arr,node,root) {
+            if(arr[2]===-1){
+                root[arr[0]]=node;
+            }else{
+
+            }
+        }
+        f(obj);
+        console.log(obj);
+    </script>
+</body>
+</html>
