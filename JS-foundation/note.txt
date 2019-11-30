@@ -20,3 +20,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 7.使用cssText动态改变css，这样改变为内联style，用的少(一般用于动态改变少量css)。一般用setAttribute设置class来添加css。或者直接改变
 css link(整页变换)。
+
+8.编写函数，其实就是解决定量和定性的问题。

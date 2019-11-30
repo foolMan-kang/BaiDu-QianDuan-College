@@ -17,22 +17,19 @@
             [8, "Area2-2-1", 6],
         ];
         let obj={};
-        function f(root) {
-            for(let i=0;i<menuArr.length;i++){
-                let arr=menuArr[i];
-                let temp={name:arr[1]};
-                search(menuArr,temp,root);
-            }
-        }
-        function search(arr,node,root) {
-            if(arr[2]===-1){
-                root[arr[0]]=node;
-            }else{
-
-            }
-        }
-        f(obj);
+        f();
         console.log(obj);
+
+        function f() {
+            obj[menuArr[0][0]]={name:menuArr[0][1],subMenu:{}};
+            obj[menuArr[1][0]]={name:menuArr[1][1],subMenu:{}};
+            obj[menuArr[0][0]]['subMenu'][menuArr[2][0]]={name:menuArr[2][1]};
+            obj[menuArr[0][0]]['subMenu'][menuArr[3][0]]={name:menuArr[3][1],subMenu:{}};
+            obj[menuArr[1][0]]['subMenu'][menuArr[4][0]]={name:menuArr[4][1]};
+            obj[menuArr[1][0]]['subMenu'][menuArr[5][0]]={name:menuArr[5][1],subMenu:{}};
+            obj[menuArr[0][0]]['subMenu'][menuArr[3][0]]['subMenu'][menuArr[6][0]]={name:menuArr[6][1]};
+            obj[menuArr[1][0]]['subMenu'][menuArr[5][0]]['subMenu'][menuArr[7][0]]={name:menuArr[7][1]};
+        }
     </script>
 </body>
 </html>
