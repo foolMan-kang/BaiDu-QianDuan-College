@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="year-select">
+    <option value="2000">2000</option>
+    <option value="2001">2001</option>
+    <option value="2002">2002</option>
+    <option value="2032">2032</option>
+</select>
+
+<select id="month-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="12">12</option>
+</select>
+
+<select id="day-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="31">31</option>
+</select>
+
+<select id="hour-select">
+    <option value="0">00</option>
+    <option value="1">01</option>
+    <option value="23">23</option>
+</select>
+
+<select id="minute-select">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option>59</option>
+</select>
+
+<select id="second-select">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="59">59</option>
+</select>
+<p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+<script>
+    const year=document.querySelector('#year-select');
+    const month=document.querySelector('#month-select');
+    const day=document.querySelector('#day-select');
+    const hour=document.querySelector('#hour-select');
+    const minute=document.querySelector('#minute-select');
+    const second=document.querySelector('#second-select');
+    const result=document.querySelector('#result-wrapper');
+    year.addEventListener('click',clickSelection);
+    month.addEventListener('click',clickSelection);
+    day.addEventListener('click',clickSelection);
+    hour.addEventListener('click',clickSelection);
+    minute.addEventListener('click',clickSelection);
+    second.addEventListener('click',clickSelection);
+
+    function clickSelection(e) {
+        showTime();
+    }
+
+    function getXingQi(date) {
+        const weekly=['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+        return weekly[date.getDay()];
+    }
+
+    function judge_run(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    function judgeMaxMonth(month,is_run) {
+        const maxMonthDay=[31,28,31,30,31,30,31,31,30,31,30,31];
+        let mm=maxMonthDay[month-1];
+        if(is_run && month===2) mm++;
+        return mm;
+    }
+
+    function compareTime(date) {
+        let cur_time=new Date();
+        let gap=Math.floor((cur_time-date)/1000);
+        let comp=gap>0?'已经过去':'还有';
+        gap=Math.abs(gap);
+        let gap_d=Math.floor(gap/(60*60*24));
+        gap=gap%(60*60*24);
+        let gap_h=Math.floor(gap/3600);
+        gap%=3600;
+        let gap_m=Math.floor(gap/60);
+        gap%=60;
+        let gap_s=gap;
+        return [gap_d,gap_h,gap_m,gap_s,comp];
+    }
+
+    function getFormat(year,month,day,weekly,hour,minute,second) {
+        let gap=compareTime(new Date(year,month,day,hour,minute,second));
+        result.textContent='现在距离 '+year+'年'+month+'月'+day+'日 '+weekly+' '
+            +hour+':'+minute+':'+second+' '+gap[4]+' '+gap[0]+' 天 '+gap[1]+' 小时 '+gap[2]+' 分 '+gap[3]+' 秒 ';
+    }
+
+    function showTime() {
+        let mm=judgeMaxMonth(month.value,judge_run(year.value));
+        day[2].value=mm;
+        day[2].textContent=mm;
+        let date=new Date(year.value,month.value,day.value);
+        let weekly=getXingQi(date);
+        getFormat(year.value,month.value,day.value,weekly,hour.value,minute.value,second.value);
+    }
+</script>
+</body>
+</html>

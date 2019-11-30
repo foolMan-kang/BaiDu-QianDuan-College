@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="time1"></p>
+    <p id="time2"></p>
+    <script>
+        const clock1=document.querySelector('#time1');
+        const clock2=document.querySelector('#time2');
+        showTime();
+        setInterval(showTime,500);
+        
+        function getXingQi(date) {
+            const weekly=['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+            const en_week=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            return [weekly[date.getDay()],en_week[date.getDay()]];
+        }
+        
+        function checkTime(t) {
+            if(t<10)
+                t='0'+t;
+            return t;
+        }
+        
+        function changeFormat(year,month,day,weekly,hour,minute,seconds) {
+            clock1.textContent=year+'年'+month+'月'+day+'日 '+weekly[0]+' '
+                +hour+':'+minute+':'+seconds;
+            let tt=hour>=12?'PM':'AM';
+            hour=hour>=12?hour-12:hour;
+            clock2.textContent=year+'-'+month+'-'+day+' '+weekly[1]+' '
+                +hour+':'+minute+':'+seconds+' '+tt;
+        }
+        function showTime() {
+            let date=new Date();
+            let year=date.getFullYear(),month=checkTime(date.getMonth()),day=checkTime(date.getDate());
+            let weekly=getXingQi(date);
+            let hour=checkTime(date.getHours()),minute=checkTime(date.getMinutes()),seconds=checkTime(date.getSeconds());
+            changeFormat(year,month,day,weekly,hour,minute,seconds);
+        }
+    </script>
+</body>
+</html>
