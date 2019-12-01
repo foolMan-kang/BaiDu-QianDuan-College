@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        li:hover{
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+    <script>
+        const input=document.querySelector('#email-input');
+        const tip=document.querySelector('#email-sug-wrapper');
+        const postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+        let email=[];
+
+        tip.onclick=function(e){
+            if(e.target.nodeName==='LI'){
+                input.value=e.target.textContent;
+                hiddenTip();
+            }
+        };
+
+        input.oninput = function() {
+            let text=getInput();
+            let tipContent=getTipContent(text);
+            addTip(tipContent);
+            controlTipStatus(text);
+            // 获取用户输入，生成提示框中的提示内容，将提示内容添加到email-sug-wrapper中
+            // 控制email-sug-wrapper的显示/隐藏状态
+        };
+
+        function getInput() {
+            return input.value.trim();
+        }
+
+        function getTipContent(text) {
+            let tip=[];
+            let front='',last='';
+            let flag=false;
+            if(text.indexOf('@')>=0 && text.indexOf('@')<text.length-1){
+                front=text.substr(0,text.indexOf('@'));
+                last=text.substr(text.indexOf('@')+1,text.length);
+                for(let i=0;i<postfixList.length;i++){
+                    if(postfixList[i].indexOf(last)>=0){
+                        flag=true;
+                        break;
+                    }
+                }
+            }else if(text.indexOf('@')>=0){
+                front=text.substr(0,text.indexOf('@'));
+            }else{
+                front=text;
+            }
+            for(let i=0;i<postfixList.length;i++){
+                if(flag){
+                    if(postfixList[i].indexOf(last)>=0){
+                        tip.push(front+'@'+postfixList[i]);
+                    }
+                }else{
+                    tip.push(front+'@'+postfixList[i]);
+                }
+            }
+            return tip;
+        }
+
+        function addTip(tipContent) {
+            for(let i=0;i<tipContent.length;i++){
+                if(email.length<postfixList.length){
+                    let li=document.createElement('li');
+                    li.textContent=tipContent[i];
+                    li.style.listStyle='none';
+                    tip.appendChild(li);
+                    email.push(li);
+                }else{
+                    email[i].textContent=tipContent[i];
+                }
+            }
+            for(let i=tipContent.length;i<postfixList.length;i++){
+                email[i].textContent='';
+            }
+        }
+
+        function controlTipStatus(text) {
+            if(text===''){
+                hiddenTip();
+            } else {
+                showTip();
+            }
+        }
+
+        function hiddenTip() {
+            tip.style.visibility='hidden';
+        }
+
+        function showTip() {
+            tip.style.visibility='visible';
+        }
+    </script>
+</body>
+</html>
